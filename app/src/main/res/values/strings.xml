@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name" translatable="false">MyWeatherApp</string>
+    <string name="select_your_location">Select your location</string>
+    <string name="weather_conditions">weather conditions</string>
+    <string name="notif_channel_name">Morning Notifications</string>
+    <string name="notif_channel_description">A channel for morning notifications</string>
+    <string name="notification_title">Morning Forecast for</string>
+    <string name="notification_text">Check latest weather forecast</string>
+    <string name="toast_clicked_city">Clicked</string>
+    <string name="current_temp">Current</string>
+</resources>

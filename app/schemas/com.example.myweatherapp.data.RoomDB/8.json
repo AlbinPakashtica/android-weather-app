@@ -1,0 +1,135 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 8,
+    "identityHash": "6d90171b5448c84c4b48a2c65dc64395",
+    "entities": [
+      {
+        "tableName": "weather",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`type` INTEGER NOT NULL, `name` TEXT NOT NULL, `cityLat` REAL NOT NULL, `cityLong` REAL NOT NULL, `dateTime` INTEGER NOT NULL, `img` TEXT, `min` REAL, `max` REAL, `wId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, FOREIGN KEY(`cityLat`, `cityLong`) REFERENCES `locations`(`lat`, `longitude`) ON UPDATE CASCADE ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "type",
+            "columnName": "type",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cityLat",
+            "columnName": "cityLat",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cityLong",
+            "columnName": "cityLong",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dateTime",
+            "columnName": "dateTime",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "img",
+            "columnName": "img",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "min",
+            "columnName": "min",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "max",
+            "columnName": "max",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "wId",
+            "columnName": "wId",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "wId"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": [
+          {
+            "table": "locations",
+            "onDelete": "CASCADE",
+            "onUpdate": "CASCADE",
+            "columns": [
+              "cityLat",
+              "cityLong"
+            ],
+            "referencedColumns": [
+              "lat",
+              "longitude"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "locations",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`locationName` TEXT NOT NULL, `locationType` INTEGER NOT NULL, `lat` REAL NOT NULL, `longitude` REAL NOT NULL, PRIMARY KEY(`lat`, `longitude`))",
+        "fields": [
+          {
+            "fieldPath": "locationName",
+            "columnName": "locationName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "locationType",
+            "columnName": "locationType",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lat",
+            "columnName": "lat",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "longitude",
+            "columnName": "longitude",
+            "affinity": "REAL",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "lat",
+            "longitude"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '6d90171b5448c84c4b48a2c65dc64395')"
+    ]
+  }
+}

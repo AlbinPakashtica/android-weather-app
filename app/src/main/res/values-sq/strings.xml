@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MyWeatherApp</string>
+    <string name="select_your_location">Zgjidhni vendin tuaj</string>
+    <string name="weather_conditions">Kushtet Atmosferike</string>
+    <string name="notification_title">Parashikimi I Motit për</string>
+    <string name="notification_text">Kontrolloni parashikimin e fundit të motit</string>
+    <string name="toast_clicked_city">Klikuat</string>
+    <string name="notif_channel_name">Njoftimet e Mëngjesit</string>
+    <string name="notif_channel_description">Një kanal për njoftimet e mëngjesit</string>
+    <string name="current_temp">Tani</string>
+</resources>
